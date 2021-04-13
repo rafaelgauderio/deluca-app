@@ -1,0 +1,26 @@
+
+
+<% if content.errors.any? %>
+  Erros: <%= content.erros.full_messages.join(', ') %>
+<br>
+<br>
+<% end %>
+
+<%= form_with(model: content, local: true) do |form| %>
+  <div class='field' >
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <br>
+  <div class='field'>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class='action'>
+    <%= form.submit %>
+  </div>
+
+  <% end %>
+
