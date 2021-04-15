@@ -6,8 +6,9 @@
 <% @contents.each do |content| %>
 Title: <%= content.title %>
 Description: <%= content.description %>
-<%= link_to 'Edit content', edit_content_path(content) %>
-<%= link_to 'Show content', content_path(content) %>
+<%= link_to 'Show', content_path(content) %>
+<%= link_to 'Edit', edit_content_path(content) %>
+<%= link_to 'Destroy', content_path(content), method: :delete, data: {confirm: 'Confirm delete'}  %>
 <br><br>
   <% end %>
 
