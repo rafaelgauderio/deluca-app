@@ -1,8 +1,14 @@
 <h1>Home do usuário</h1>
+
+<h2> Tags do usuário </h2>
 <br>
-<h2> Tags do usuário (maior a tag, maior a acorrência) </h2>
-<br><br>
 
 <% @tags_data.each do |tag_name, count| %>
-  <%= tag_name %> (<%= count %>)
+
+ <% font_size = count * 20 %>
+
+  <span style='font-size: <%= font_size > 75 ? 75 : font_size %>px'>
+    <%= link_to tag_name, contents_path(tags: [tag_name]), style: 'text-decoration: none' %>
+  </span>
+
 <% end %>
