@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <div class="container">
     <% if user_signed_in? %>
       <br>
    
@@ -22,5 +23,6 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+    </div>
   </body>
 </html>
